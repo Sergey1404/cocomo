@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane minHeight="-Infinity" minWidth="500.0" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cocomo.controllers.CalculatorFXMLController">
+   <bottom>
+      <BorderPane minWidth="800.0" prefHeight="57.0" prefWidth="800.0" BorderPane.alignment="CENTER">
+         <bottom>
+            <Button mnemonicParsing="false" onAction="#showResult" prefHeight="26.0" prefWidth="138.0" text="Рассчитать" textAlignment="CENTER" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets bottom="10.0" />
+               </BorderPane.margin>
+            </Button>
+         </bottom>
+         <left>
+            <AnchorPane prefHeight="23.0" prefWidth="214.0" BorderPane.alignment="CENTER">
+               <children>
+                  <BorderPane prefHeight="53.0" prefWidth="215.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-1.0">
+                     <top>
+                        <Label fx:id="resultName1" alignment="CENTER" prefHeight="34.0" prefWidth="215.0" textAlignment="CENTER" BorderPane.alignment="CENTER" />
+                     </top>
+                     <center>
+                        <Label fx:id="result1" alignment="CENTER" text="    " BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+               </children>
+            </AnchorPane>
+         </left>
+         <center>
+            <AnchorPane prefHeight="52.0" prefWidth="360.0" BorderPane.alignment="CENTER">
+               <children>
+                  <BorderPane layoutX="31.0" layoutY="-3.0" prefHeight="52.0" prefWidth="311.0" AnchorPane.leftAnchor="31.0" AnchorPane.rightAnchor="25.0">
+                     <center>
+                        <Label fx:id="result2" alignment="CENTER" text="    " BorderPane.alignment="CENTER" />
+                     </center>
+                     <top>
+                        <Label fx:id="resultName2" alignment="CENTER" prefHeight="35.0" prefWidth="310.0" textAlignment="CENTER" BorderPane.alignment="CENTER" />
+                     </top>
+                  </BorderPane>
+               </children>
+            </AnchorPane>
+         </center>
+         <right>
+            <AnchorPane prefHeight="52.0" prefWidth="220.0" BorderPane.alignment="CENTER">
+               <children>
+                  <BorderPane layoutX="2.0" layoutY="-3.0" prefHeight="55.0" prefWidth="216.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0">
+                     <top>
+                        <Label fx:id="resultName3" alignment="CENTER" prefHeight="35.0" prefWidth="216.0" BorderPane.alignment="CENTER" />
+                     </top>
+                     <center>
+                        <Label fx:id="result3" alignment="CENTER" text="    " BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+               </children>
+            </AnchorPane>
+         </right>
+      </BorderPane>
+   </bottom>
+   <top>
+      <TabPane fx:id="methods" prefHeight="513.0" prefWidth="800.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+         <tabs>
+            <Tab onSelectionChanged="#changeMode" text="COCOMO">
+               <content>
+                  <AnchorPane prefHeight="518.0" prefWidth="800.0">
+                     <children>
+                        <fx:include fx:id="cocomo" source="cocomo.fxml" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="COCOMO 2">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="480.0" prefWidth="800.0">
+                     <children>
+                        <fx:include fx:id="cocomo2" source="cocomo2.fxml" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+         </tabs>
+      </TabPane>
+   </top>
+</BorderPane>
